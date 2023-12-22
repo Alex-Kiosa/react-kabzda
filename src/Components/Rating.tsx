@@ -1,14 +1,18 @@
 import React from "react";
 import {Star} from "./Star";
 
-export function Rating() {
+type PropsType = {
+    value: 0 | 1 | 2 | 3 | 4 | 5
+}
+
+export function Rating(props: PropsType) {
     return (
         <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
+            <Star selected={props.value >= 1}/>
+            <Star selected={props.value >= 2}/>
+            <Star selected={props.value >= 3}/>
+            <Star selected={props.value >= 4}/>
+            <Star selected={props.value >= 5}/>
         </div>
     )
 }

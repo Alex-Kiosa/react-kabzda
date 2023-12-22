@@ -1,5 +1,5 @@
 import React from "react";
 
-export function AccordionTitle() {
-    return <h3>Меню</h3>
+export function AccordionTitle(props: {title: string}) {
+    return <h3>{props.title}</h3>
 }

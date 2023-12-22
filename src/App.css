@@ -1,9 +1,9 @@
-#root{
+#root {
     /*text-align: center;*/
 }
 
 .app-container {
-    margin: 30px auto ;
+    margin: 30px auto;
     width: auto;
     max-width: 1000px;
     height: calc(100vh - 60px);
@@ -11,3 +11,38 @@
     border: 2px solid #CDCAD5;
     border-radius: 2rem;
 }
+
+.checkboxes-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.checkboxes {
+    border: 2px solid #565656;
+    border-radius: 50rem;
+    overflow: hidden;
+}
+
+.checkbox {
+    display: inline-block;
+    padding: 15px;
+}
+
+.checkbox_on {
+    border-right: 2px solid #565656;
+}
+
+.indicator {
+    margin-left: 15px;
+    padding: 15px;
+    border-radius: 50rem;
+}
+
+.indicator_on, .checkbox_on {
+    background-color: #35ab16;
+}
+
+.indicator_off, .checkbox_off {
+    background-color: crimson;
+}
+

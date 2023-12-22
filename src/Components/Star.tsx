@@ -1,7 +1,9 @@
 import React from "react";
 
-export function Star() {
-    return (
-        <span>★</span>
-    )
+type PropsType = {
+    selected: boolean
+}
+
+export function Star(props: PropsType) {
+    return <span>{props.selected? "★" : "☆"}</span>
 }
