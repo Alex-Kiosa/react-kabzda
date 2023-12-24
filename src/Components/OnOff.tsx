@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 type PropsType = {
     onValue: boolean
-    onClick: (value: boolean) => void
+    onClick: (onValue: boolean) => void
 }
 
 export function OnOff(props: PropsType) {
