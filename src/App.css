@@ -46,3 +46,6 @@
     background-color: crimson;
 }
 
+.rating:hover {
+    cursor: pointer
+}

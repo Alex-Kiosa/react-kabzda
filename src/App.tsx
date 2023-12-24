@@ -1,17 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
-import {Rating} from "./Components/Rating";
+import {Rating, RatingValueType} from "./Components/Rating";
 import {Accordion} from "./Components/Accordion";
-import {OnOf} from "./Components/OnOf";
+import {OnOff} from "./Components/OnOff";
+import {UnControlledRating} from "./Components/UnControlledRating";
+import {UnControlledAccordion} from "./Components/UnContolledAccordion";
+import {UnControlledOnOff} from "./Components/UnControlledOnOff";
 
 function App() {
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    let [accordionCollapsed, setAccordionCollapsed] = useState(false)
+    let [onValue, setOnValue] = useState(false)
+
     return (
         <div className='app-container'>
-            <Rating value={3}/>
-            <Accordion titleValue={"Menu"} collapsed={true}/>
-            <Accordion titleValue={"Users"} collapsed={false}/>
-            <OnOf isOn={true}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <UnControlledRating/>
+            <Accordion titleValue={"Users"} collapsed={accordionCollapsed} setAccordionCollapsed={setAccordionCollapsed}/>
+            <UnControlledAccordion titleValue={"Меню"}/>
+            <OnOff onValue={onValue} onClick={setOnValue}/>
+            <UnControlledOnOff/>
         </div>
     );
 }

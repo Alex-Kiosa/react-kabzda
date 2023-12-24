@@ -1,5 +1,16 @@
 import React from "react";
 
-export function AccordionTitle(props: {title: string}) {
-    return <h3>{props.title}</h3>
+type PropsType = {
+    title: string
+    onClick?: () => void
+    setAccordionCollapsed?: () => void
+}
+
+export function AccordionTitle(props: PropsType) {
+    function onclickHandler() {
+        props.onClick && props.onClick()
+        props.setAccordionCollapsed && props.setAccordionCollapsed()
+    }
+
+    return <h3 onClick={onclickHandler}>{props.title}</h3>
 }
