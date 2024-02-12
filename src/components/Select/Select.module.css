@@ -1,0 +1,45 @@
+.selectValue {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #182369;
+    border-radius: 10px;
+    color: #182369;
+    position: relative;
+    z-index: 2;
+}
+
+.selectValue svg {
+    width: 20px;
+    color: #182369;
+}
+
+.selectCollapsed svg {
+    transform: rotate(-180deg);
+}
+
+.selectValue:hover {
+    cursor: pointer;
+}
+
+.selectOptions {
+    margin: -10px 0 0;
+    padding: 15px 0 5px;
+    background-color: #c6d7f5;
+    border: 1px solid #889ec4;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.selectOptions li {
+    padding: 5px 10px;
+    list-style: none;
+}
+.selectOptions li:hover {
+    cursor: pointer;
+    background-color: #dde5f3;
+}
+
+

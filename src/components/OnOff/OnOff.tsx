@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 type PropsType = {
     onValue: boolean
@@ -6,17 +6,12 @@ type PropsType = {
 }
 
 export function OnOff(props: PropsType) {
-    // console.log("OnOff rendering")
-
-    const onClickHandler = () => {
-        props.onClick(!props.onValue)
-    }
 
     return <div className="checkboxes-wrap">
         <div className="checkboxes">
-            <div className={`checkbox ${props.onValue && 'checkbox_on'}`} onClick={onClickHandler}>On
+            <div className={`checkbox ${props.onValue && 'checkbox_on'}`} onClick={() => props.onClick(false)}>On
             </div>
-            <div className={`checkbox ${!props.onValue && 'checkbox_off'}`} onClick={onClickHandler}>Off
+            <div className={`checkbox ${!props.onValue && 'checkbox_off'}`} onClick={() => props.onClick(true)}>Off
             </div>
         </div>
         <div className={`indicator ${props.onValue ? 'indicator_on' : 'indicator_off'}`}></div>

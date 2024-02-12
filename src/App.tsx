@@ -18,8 +18,8 @@ function App() {
             <UnControlledRating/>
             <Accordion titleValue={"Users"} collapsed={accordionCollapsed} setAccordionCollapsed={() => setAccordionCollapsed(!accordionCollapsed)}/>
             <UnControlledAccordion/>
-            {/*<OnOff onValue={onValue} onClick={setOnValue}/>*/}
-            <UnControlledOnOff onChange={setOnValue} />{onValue.toString()}
+            <OnOff onValue={onValue} onClick={setOnValue}/>
+            {/*<UnControlledOnOff onChange={setOnValue} />{onValue.toString()}*/}
         </div>
     );
 }

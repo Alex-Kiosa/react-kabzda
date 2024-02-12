@@ -11,7 +11,7 @@ export function Rating(props: PropsType) {
         <div className="rating">
             <Star selected={props.value >= 1} onClick={props.onClick} value={1}/>
             <Star selected={props.value >= 2} onClick={props.onClick} value={2}/>
-            <Star selected={props.value >= 3} onClick={props.onClick} value={2}/>
+            <Star selected={props.value >= 3} onClick={props.onClick} value={3}/>
             <Star selected={props.value >= 4} onClick={props.onClick} value={4}/>
             <Star selected={props.value >= 5} onClick={props.onClick} value={5}/>
         </div>
