@@ -6,19 +6,30 @@ export default {
     component: Select
 };
 
-export const SelectAction = () => {
-    const [value, setValue] = useState<string>('Choose option')
-    const onChange = (newValue: string) => {
-        setValue(newValue)
-    }
+export const WithValue = () => {
+    const [value, setValue] = useState('1')
 
     return <Select
-        options={[
-            {title: "option 1", value: 1},
-            {title: "option 2", value: 2},
-            {title: "option 3", value: 3},
+        items={[
+            {title: "option 1", value: "1"},
+            {title: "option 2", value: "2"},
+            {title: "option 3", value: "3"},
         ]}
-        onChange={onChange}
+        value={value}
+        onChange={setValue}
+    />
+}
+
+export const WithoutValue = () => {
+    const [value, setValue] = useState(null)
+
+    return <Select
+        items={[
+            {title: "option 1", value: "1"},
+            {title: "option 2", value: "2"},
+            {title: "option 3", value: "3"},
+        ]}
+        onChange={setValue}
         value={value}
     />
 }
