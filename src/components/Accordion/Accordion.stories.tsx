@@ -54,17 +54,3 @@ export const AccordionAction = () => {
         onClick={(id) => alert(`user with ID ${id} should be happy`)}
     />
 }
-
-
-/*
-// Advanced syntax for usage
-type Story = StoryObj<typeof Accordion>;
-
-export const FirstStory: Story = {
-    // args - this is the props of our component
-    args: {
-        titleValue: 'Collapsed',
-        collapsed: true,
-        setAccordionCollapsed: () => {}
-    },
-}*/
