@@ -14,8 +14,10 @@ type SelectPropsType = {
 }
 
 export function Select(props: SelectPropsType) {
+    console.log("Rendering Select")
     const [active, setActive] = useState(false)
     const [hoveredItemValue, setHoveredItemValue] = useState(props.value)
+    console.log(active)
 
     const selectedItem = props.items.find(i => i.value === props.value)
     const hoveredItem = props.items.find(i => i.value === hoveredItemValue)
@@ -25,8 +27,7 @@ export function Select(props: SelectPropsType) {
     }, [props.value])
 
     const toggleItems = () => setActive(!active)
-    const omFocusHandler = () => {
-    }
+    const omFocusHandler = () => {}
     const onBlurHandler = () => setActive(!active)
     const onKeyDownHandler = (e: KeyboardEvent<HTMLDivElement>) => {
         if (e.key === "ArrowDown" || e.key === "ArrowUp") {
@@ -55,11 +56,12 @@ export function Select(props: SelectPropsType) {
         toggleItems()
     }
 
+    // FIXME
+
     return (
         <div className={style.select}
-             tabIndex={1}
+             tabIndex={0}
              onBlur={onBlurHandler}
-             onFocus={omFocusHandler}
              onKeyDown={onKeyDownHandler}>
             <span
                 onClick={toggleItems}
