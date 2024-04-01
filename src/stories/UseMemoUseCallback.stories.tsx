@@ -1,7 +1,7 @@
-import React, {useMemo, useState} from "react";
+import React, {useCallback, useMemo, useState} from "react";
 
 export default {
-    title: 'useMemo'
+    title: 'useMemoUseCallback'
 }
 
 export const DifficultCountExample = () => {
@@ -47,7 +47,7 @@ export const DifficultCountExample = () => {
 
 const UsersSecret = (props: { users: Array<string> }) => {
     console.log("UsersSecret")
-    debugger
+    // debugger
 
     return <div>
         {props.users.map((u, i) => <div key={i}>{u}</div>)}
@@ -77,3 +77,42 @@ export const HelpsForReactMemo = () => {
         <Users users={newArray}/>
     </>
 }
+
+export const LikeUseCallback = () => {
+    console.log("LikeUseCallback")
+    const [counter, setCounter] = useState(0)
+    const [books, setBooks] = useState(["HTML", "React", "CSS"])
+
+    const memoizedAddBook = useMemo(()=> {
+        return ()=> {
+            console.log(books)
+            const newBooks = [...books, 'MongoDB ' + new Date().getTime()]
+            setBooks(newBooks)
+        }
+    }, [])
+
+    const memoizedAddBook2 = useCallback(() => {
+        console.log(books)
+        const newBooks = [...books, 'MongoDB ' + new Date().getTime()]
+        setBooks(newBooks)
+    }, [books])
+
+
+    return <>
+        <button onClick={() => setCounter(counter + 1)}>+</button>
+        {counter}
+        <Books addBook={memoizedAddBook2}/>
+    </>
+}
+
+type BookSecretPropsType = {
+    addBook: () => void
+}
+
+const BooksSecret = (props: BookSecretPropsType) => {
+    console.log("BooksSecret")
+
+    return <button onClick={props.addBook}>Add book</button>
+}
+
+const Books = React.memo(BooksSecret)
